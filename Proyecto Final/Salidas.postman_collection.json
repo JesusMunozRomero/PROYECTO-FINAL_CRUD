@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "8978913b-503f-4806-a874-71a78b87f05e",
+		"name": "Salidas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35111551"
+	},
+	"item": [
+		{
+			"name": "GET SALIDAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Salidas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Salidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET SALIDAS BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Salidas/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Salidas",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST SALIDAS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"barco_id\": 20,\r\n    \"fecha_salida\": \"2024-09-13\",\r\n    \"hora_salida\": \"07:45:00\",\r\n    \"destino\": \"Playa Escondida\",\r\n    \"patron_id\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Salidas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Salidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE SALIDAS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"barco_id\": 10,\r\n    \"fecha_salida\": \"2024-05-08\",\r\n    \"hora_salida\": \"07:15:00\",\r\n    \"destino\": \"Bahía Azul\",\r\n    \"patron_id\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Salidas/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Salidas",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE SALIDAS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Salidas/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Salidas",
+						"30"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

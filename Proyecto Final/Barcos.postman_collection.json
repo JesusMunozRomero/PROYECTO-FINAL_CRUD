@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "e81d09f1-5e67-4d0c-a7e8-edf9fa2f2e70",
+		"name": "Barcos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35111551"
+	},
+	"item": [
+		{
+			"name": "GET BARCOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Barcos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Barcos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BARCOS BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Barcos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Barcos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST BARCOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"socio_id\": 17,\r\n    \"numero_matricula\": \"TU0123\",\r\n    \"nombre_barco\": \"El Mar Eterno\",\r\n    \"numero_amarre\": 85,\r\n    \"cuota_amarre\": 255.25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Barcos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Barcos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE BARCOS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"socio_id\": 17,\r\n    \"numero_matricula\": \"TU0123\",\r\n    \"nombre_barco\": \"El Mar Eterno\",\r\n    \"numero_amarre\": 85,\r\n    \"cuota_amarre\": 255.25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Barcos/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Barcos",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Barcos/21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Barcos",
+						"21"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "8e23c8ce-0a14-4f68-a418-09794b6f1bc5",
+		"name": "Socios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35111551"
+	},
+	"item": [
+		{
+			"name": "GET SOCIOS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Socios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Socios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET SOCIOS BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Socios/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Socios",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST SOCIOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Elena\",\r\n    \"apellido\": \"Ruiz\",\r\n    \"direccion\": \"Avenida Arena 505, Ciudad\",\r\n    \"telefono\": \"555-2020\",\r\n    \"email\": \"elena.ruiz@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Socios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Socios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE SOCIO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Elena\",\r\n    \"apellido\": \"Gomez\",\r\n    \"direccion\": \"Avenida Arena 505, Ciudad\",\r\n    \"telefono\": \"555-2020\",\r\n    \"email\": \"elena.ruiz@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/Socios/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Socios",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE SOCIO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/Socios/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"Socios",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

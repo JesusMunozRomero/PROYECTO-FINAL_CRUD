@@ -1,0 +1,208 @@
+CREATE DATABASE IF NOT EXISTS clubNautico;
+
+USE clubNautico;
+
+-- Crear tabla Socios
+CREATE TABLE Socios (
+    socio_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    direccion VARCHAR(100),
+    telefono VARCHAR(15),
+    email VARCHAR(100)
+);
+
+-- Crear tabla Barcos
+CREATE TABLE Barcos (
+    barco_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    socio_id BIGINT not null,
+    numero_matricula VARCHAR(20),
+    nombre_barco VARCHAR(100),
+    numero_amarre INT,
+    cuota_amarre DECIMAL(10, 2),
+    FOREIGN KEY (socio_id) REFERENCES Socios(socio_id) ON DELETE CASCADE
+);
+
+-- Crear tabla Salidas
+CREATE TABLE Salidas (
+    salida_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    barco_id BIGINT not null,
+    fecha_salida DATE,
+    hora_salida TIME,
+    destino VARCHAR(100),
+    patron_id BIGINT not null,
+    FOREIGN KEY (barco_id) REFERENCES Barcos(barco_id) ON DELETE CASCADE
+);
+
+-- Usar la base de datos clubNautico
+USE clubNautico;
+
+-- Insertar datos en la tabla Socios
+INSERT INTO Socios (nombre, apellido, direccion, telefono, email)
+VALUES
+('Juan', 'Pérez', 'Calle Falsa 123, Ciudad', '555-1234', 'juan.perez@example.com'),
+('María', 'González', 'Avenida Siempre Viva 456, Ciudad', '555-5678', 'maria.gonzalez@example.com'),
+('Luis', 'Rodríguez', 'Plaza Central 789, Ciudad', '555-8765', 'luis.rodriguez@example.com'),
+('Ana', 'Martínez', 'Calle Sol 321, Ciudad', '555-1122', 'ana.martinez@example.com'),
+('Pedro', 'López', 'Avenida Mar 654, Ciudad', '555-3344', 'pedro.lopez@example.com'),
+('Laura', 'Hernández', 'Calle Flor 987, Ciudad', '555-5566', 'laura.hernandez@example.com'),
+('José', 'Sánchez', 'Plaza Luna 543, Ciudad', '555-7788', 'jose.sanchez@example.com'),
+('Marta', 'Díaz', 'Avenida Nube 765, Ciudad', '555-9900', 'marta.diaz@example.com'),
+('Carlos', 'García', 'Calle Océano 404, Ciudad', '555-1010', 'carlos.garcia@example.com'),
+('Elena', 'Ruiz', 'Avenida Arena 505, Ciudad', '555-2020', 'elena.ruiz@example.com'),
+('Miguel', 'Fernández', 'Plaza Puerto 606, Ciudad', '555-3030', 'miguel.fernandez@example.com'),
+('Lucía', 'Gómez', 'Calle Mar 707, Ciudad', '555-4040', 'lucia.gomez@example.com'),
+('Roberto', 'Díaz', 'Avenida Pescador 808, Ciudad', '555-5050', 'roberto.diaz@example.com'),
+('Antonio', 'Ramírez', 'Calle Faro 909, Ciudad', '555-6060', 'antonio.ramirez@example.com'),
+('Julia', 'Torres', 'Calle Loma 1010, Ciudad', '555-7070', 'julia.torres@example.com'),
+('Sofía', 'Moreno', 'Avenida Valle 1111, Ciudad', '555-8080', 'sofia.moreno@example.com'),
+('Rafael', 'Molina', 'Calle Río 1212, Ciudad', '555-9090', 'rafael.molina@example.com'),
+('Isabel', 'Romero', 'Avenida Selva 1313, Ciudad', '555-0101', 'isabel.romero@example.com'),
+('Diego', 'Navarro', 'Calle Montaña 1414, Ciudad', '555-0202', 'diego.navarro@example.com'),
+('Paula', 'Ramos', 'Avenida Playa 1515, Ciudad', '555-0303', 'paula.ramos@example.com'),
+('Alberto', 'Vega', 'Calle Bosque 1616, Ciudad', '555-0404', 'alberto.vega@example.com'),
+('Carmen', 'Serrano', 'Avenida Lago 1717, Ciudad', '555-0505', 'carmen.serrano@example.com'),
+('Adriana', 'Castro', 'Calle Nieve 1818, Ciudad', '555-0606', 'adriana.castro@example.com'),
+('Ignacio', 'Ortega', 'Avenida Campo 1919, Ciudad', '555-0707', 'ignacio.ortega@example.com'),
+('Gloria', 'Rubio', 'Calle Estrella 2020, Ciudad', '555-0808', 'gloria.rubio@example.com'),
+('Raúl', 'Santos', 'Avenida Estuario 2121, Ciudad', '555-0909', 'raul.santos@example.com'),
+('Teresa', 'Iglesias', 'Calle Luna 2222, Ciudad', '555-1011', 'teresa.iglesias@example.com'),
+('Hugo', 'Méndez', 'Avenida Sol 2323, Ciudad', '555-1112', 'hugo.mendez@example.com'),
+('Valeria', 'Guerrero', 'Calle Horizonte 2424, Ciudad', '555-1213', 'valeria.guerrero@example.com'),
+('Sebastián', 'Mora', 'Avenida Horizonte 2525, Ciudad', '555-1314', 'sebastian.mora@example.com'),
+('Olivia', 'Cano', 'Calle Viento 2626, Ciudad', '555-1415', 'olivia.cano@example.com'),
+('Javier', 'Núñez', 'Avenida Cielo 2727, Ciudad', '555-1516', 'javier.nunez@example.com'),
+('Natalia', 'Prieto', 'Calle Estación 2828, Ciudad', '555-1617', 'natalia.prieto@example.com'),
+('Francisco', 'Delgado', 'Avenida Faro 2929, Ciudad', '555-1718', 'francisco.delgado@example.com'),
+('Gabriela', 'Álvarez', 'Calle Isla 3030, Ciudad', '555-1819', 'gabriela.alvarez@example.com'),
+('Vicente', 'Marín', 'Avenida Bahía 3131, Ciudad', '555-1920', 'vicente.marin@example.com'),
+('Clara', 'Pascual', 'Calle Puerto 3232, Ciudad', '555-2021', 'clara.pascual@example.com'),
+('Jorge', 'Vidal', 'Avenida Olivo 3333, Ciudad', '555-2122', 'jorge.vidal@example.com'),
+('Daniela', 'Reyes', 'Calle Palma 3434, Ciudad', '555-2223', 'daniela.reyes@example.com'),
+('Esteban', 'Parra', 'Avenida Verde 3535, Ciudad', '555-2324', 'esteban.parra@example.com'),
+('Andrea', 'Sosa', 'Calle Naranja 3636, Ciudad', '555-2425', 'andrea.sosa@example.com'),
+('Marcos', 'Román', 'Avenida Azul 3737, Ciudad', '555-2526', 'marcos.roman@example.com'),
+('Rocío', 'Herrera', 'Calle Rojo 3838, Ciudad', '555-2627', 'rocio.herrera@example.com'),
+('Pablo', 'Villalba', 'Avenida Blanco 3939, Ciudad', '555-2728', 'pablo.villalba@example.com'),
+('Patricia', 'Suárez', 'Calle Negro 4040, Ciudad', '555-2829', 'patricia.suarez@example.com'),
+('Felipe', 'Caballero', 'Avenida Amarillo 4141, Ciudad', '555-2930', 'felipe.caballero@example.com'),
+('Alicia', 'Rivas', 'Calle Verde 4242, Ciudad', '555-3031', 'alicia.rivas@example.com'),
+('Ricardo', 'Pacheco', 'Avenida Marrón 4343, Ciudad', '555-3132', 'ricardo.pacheco@example.com'),
+('Beatriz', 'Montes', 'Calle Rosa 4444, Ciudad', '555-3233', 'beatriz.montes@example.com'),
+('Tomás', 'Cordero', 'Avenida Morado 4545, Ciudad', '555-3334', 'tomas.cordero@example.com');
+
+
+-- Insertar datos en la tabla Barcos
+INSERT INTO Barcos (socio_id, numero_matricula, nombre_barco, numero_amarre, cuota_amarre)
+VALUES
+(1, 'AB1234', 'El Velero Azul', 12, 150.50),
+(1, 'BC2345', 'La Brisa Marina', 15, 200.75),
+(2, 'CD3456', 'El Navegante', 22, 175.00),
+(3, 'DE4567', 'El Delfín', 18, 160.00),
+(4, 'EF5678', 'La Gaviota', 25, 220.50),
+(5, 'FG6789', 'El Tranquilo', 30, 190.75),
+(2, 'GH7890', 'El Velero Rápido', 27, 210.25),
+(1, 'HI8901', 'El Navegador', 10, 170.50),
+(6, 'IJ9012', 'El Explorador', 32, 180.25),
+(7, 'JK0123', 'El Aventurero', 35, 195.50),
+(8, 'KL1234', 'La Sirena', 40, 185.75),
+(9, 'LM2345', 'El Corsario', 45, 205.00),
+(10, 'MN3456', 'La Perla Negra', 50, 220.00),
+(11, 'NO4567', 'El Estrella del Mar', 55, 210.50),
+(12, 'OP5678', 'El Sol Naciente', 60, 230.75),
+(13, 'PQ6789', 'El Luna Llena', 65, 240.25),
+(14, 'QR7890', 'La Nave Estelar', 70, 250.00),
+(15, 'RS8901', 'El Rayo del Mar', 75, 235.50),
+(16, 'ST9012', 'La Brisa del Sur', 80, 245.75),
+(17, 'TU0123', 'El Mar Eterno', 85, 255.25),
+(18, 'UV1234', 'El Océano Azul', 90, 265.00),
+(19, 'VW2345', 'El Horizonte', 95, 275.50),
+(20, 'WX3456', 'El Faro del Mar', 100, 285.75),
+(21, 'XY4567', 'El Alba', 105, 295.25),
+(22, 'YZ5678', 'La Luna Nueva', 110, 305.00),
+(23, 'ZA6789', 'El Faro Rojo', 115, 315.50),
+(24, 'AB7890', 'La Marea Alta', 120, 325.75),
+(25, 'BC8901', 'El Capitán', 125, 335.25),
+(26, 'CD9012', 'El Ancla', 130, 345.00),
+(27, 'DE0123', 'El Marinero', 135, 355.50),
+(28, 'EF1234', 'La Caracola', 140, 365.75),
+(29, 'FG2345', 'El Tesoro', 145, 375.25),
+(30, 'GH3456', 'El Búho del Mar', 150, 385.00),
+(31, 'HI4567', 'La Fragata', 155, 395.50),
+(32, 'IJ5678', 'El Galeón', 160, 405.75),
+(33, 'JK6789', 'El Timón', 165, 415.25),
+(34, 'KL7890', 'El Pescador', 170, 425.00),
+(35, 'LM8901', 'El Faro Azul', 175, 435.50),
+(36, 'MN9012', 'La Estrella Polar', 180, 445.75),
+(37, 'NO0123', 'El Océano Pacífico', 185, 455.25),
+(38, 'OP1234', 'La Aurora', 190, 465.00),
+(39, 'PQ2345', 'El Tridente', 195, 475.50),
+(40, 'QR3456', 'El Kraken', 200, 485.75),
+(41, 'RS4567', 'El Albatros', 205, 495.25),
+(42, 'ST5678', 'El Tritón', 210, 505.00),
+(43, 'TU6789', 'El Mar Bravo', 215, 515.50),
+(44, 'UV7890', 'La Sirena Roja', 220, 525.75),
+(45, 'VW8901', 'El Leviatán', 225, 535.25),
+(46, 'WX9012', 'La Calypso', 230, 545.00),
+(47, 'XY0123', 'El Espíritu del Mar', 235, 555.50),
+(48, 'YZ1234', 'El Tritón Azul', 240, 565.75),
+(49, 'ZA2345', 'El Neptuno', 245, 575.25),
+(50, 'AB3456', 'El Poseidón', 250, 585.00);
+
+
+
+-- Insertar datos en la tabla Salidas
+INSERT INTO Salidas (barco_id, fecha_salida, hora_salida, destino, patron_id)
+VALUES
+(1, '2024-05-01', '08:00:00', 'Isla del Sol', 1),
+(2, '2024-05-02', '09:30:00', 'Bahía Dorada', 2),
+(3, '2024-05-03', '07:45:00', 'Playa Escondida', 3),
+(4, '2024-05-04', '10:15:00', 'Isla del Tesoro', 4),
+(5, '2024-05-05', '11:00:00', 'Playa Blanca', 5),
+(6, '2024-05-06', '09:00:00', 'Cala Escondida', 6),
+(7, '2024-05-07', '08:30:00', 'Roca Negra', 7),
+(8, '2024-05-08', '07:15:00', 'Bahía Azul', 8),
+(9, '2024-05-09', '06:45:00', 'Isla Bonita', 9),
+(10, '2024-05-10', '08:00:00', 'Isla del Sol', 1),
+(11, '2024-05-11', '09:30:00', 'Bahía Dorada', 2),
+(12, '2024-05-12', '07:45:00', 'Playa Escondida', 3),
+(13, '2024-05-13', '10:15:00', 'Isla del Tesoro', 4),
+(14, '2024-05-14', '11:00:00', 'Playa Blanca', 5),
+(15, '2024-05-15', '09:00:00', 'Cala Escondida', 6),
+(16, '2024-05-16', '08:30:00', 'Roca Negra', 7),
+(17, '2024-05-17', '07:15:00', 'Bahía Azul', 8),
+(18, '2024-05-18', '06:45:00', 'Isla Bonita', 9),
+(19, '2024-05-19', '08:00:00', 'Isla del Sol', 1),
+(20, '2024-05-20', '09:30:00', 'Bahía Dorada', 2),
+(21, '2024-05-21', '07:45:00', 'Playa Escondida', 3),
+(22, '2024-05-22', '10:15:00', 'Isla del Tesoro', 4),
+(23, '2024-05-23', '11:00:00', 'Playa Blanca', 5),
+(24, '2024-05-24', '09:00:00', 'Cala Escondida', 6),
+(25, '2024-05-25', '08:30:00', 'Roca Negra', 7),
+(26, '2024-05-26', '07:15:00', 'Bahía Azul', 8),
+(27, '2024-05-27', '06:45:00', 'Isla Bonita', 9),
+(28, '2024-05-28', '08:00:00', 'Isla del Sol', 1),
+(29, '2024-05-29', '09:30:00', 'Bahía Dorada', 2),
+(30, '2024-05-30', '07:45:00', 'Playa Escondida', 3),
+(31, '2024-06-01', '10:15:00', 'Isla del Tesoro', 4),
+(32, '2024-06-02', '11:00:00', 'Playa Blanca', 5),
+(33, '2024-06-03', '09:00:00', 'Cala Escondida', 6),
+(34, '2024-06-04', '08:30:00', 'Roca Negra', 7),
+(35, '2024-06-05', '07:15:00', 'Bahía Azul', 8),
+(36, '2024-06-06', '06:45:00', 'Isla Bonita', 9),
+(37, '2024-06-07', '08:00:00', 'Isla del Sol', 1),
+(38, '2024-06-08', '09:30:00', 'Bahía Dorada', 2),
+(39, '2024-06-09', '07:45:00', 'Playa Escondida', 3),
+(40, '2024-06-10', '10:15:00', 'Isla del Tesoro', 4),
+(41, '2024-06-11', '11:00:00', 'Playa Blanca', 5),
+(42, '2024-06-12', '09:00:00', 'Cala Escondida', 6),
+(43, '2024-06-13', '08:30:00', 'Roca Negra', 7),
+(44, '2024-06-14', '07:15:00', 'Bahía Azul', 8),
+(45, '2024-06-15', '06:45:00', 'Isla Bonita', 9),
+(46, '2024-06-16', '08:00:00', 'Isla del Sol', 1),
+(47, '2024-06-17', '09:30:00', 'Bahía Dorada', 2),
+(48, '2024-06-18', '07:45:00', 'Playa Escondida', 3),
+(49, '2024-06-19', '10:15:00', 'Isla del Tesoro', 4),
+(50, '2024-06-20', '11:00:00', 'Playa Blanca', 5);
+
+
